@@ -30,4 +30,14 @@ Successful contact information change for 'Amar', now using a non-UofT email add
 
 ## Activity 3
 
-todo
+SQL and NoSQL databases are two different approaches for storing data. Both are very powerful and for small- to medium-sized applications are practically equivalent in terms of performance.
+
+The table below outlines some of the differences between the two:
+
+| Topic | SQL | NoSQL |
+| --- | --- | --- |
+| Type  | **Relational** | Non-relational, **document-oriented** or **key-value** models |
+| Data | Structured **records** stored in **tables** | Unstructured **documents** stored in **collections** |
+| Flexibility | Fixed number of columns bound by a rigid **schema**, variable number of rows | Highly flexible, documents are not bound to a rigid schema (e.g. like JSON) and a collection can have a variable number of documents | 
+| Relationships | Efficiently support **join** operations between tables through primary and foreign keys, which also decreases data duplication | Often do not support join operations; instead users must either store data **denormalised** (duplicated between collections) or have the client application perform the joining manually |
+| Examples | Oracle Database, MySQL, Microsoft SQL Server, PostgreSQL | MongoDB, Redis, Elasticsearch, Apache Cassandra |
