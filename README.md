@@ -10,14 +10,67 @@ Below are the new deliverables for Labs 4 and 5. The original deliverables for L
 
 ### Deliverable 1
 
-✅
-
 > *Perform all development in a branch "lab4_Microservice_Experiment" in your Lab3 task
 GitHub repository (you are experimenting after all).*
 
+If you're seeing this `README`, you're on the right branch ✅
+
 ### Deliverable 2
 
-todo
+The instructions in this section assume you're in the repo's root directory (**not** the `app` subdirectory).
+
+```sh
+cd /path/to/ECE444-F2020-Lab3
+```
+
+They also assume you have Docker installed and some familiarity with using Docker through the command line. For a quick refresher on that, check out [the Getting Started docs](https://docs.docker.com/get-started/) and [this explanation on the fundamentals of Docker](https://stackify.com/docker-image-vs-container-everything-you-need-to-know/).
+
+#### Run with `Dockerfile`
+
+The `app/Dockerfile` (based on [the Docker Hub example](https://hub.docker.com/_/python)) allows us to build and run the program as follows:
+
+1. Build the image
+
+```sh
+# Build the image (we're calling it 'hellopy' but feel free to change that)
+docker build app -t hellopy
+
+# Make sure the image is present in your local Docker repository
+docker image ls
+```
+![Image built and tagged as 'hellopy:latest'](/images/lab-4-activity-2-success-1.png)
+
+2. Create a container from the image
+
+```sh
+# Run the container (we're naming it 'app') but feel free to change that
+docker run -it --rm -p 5000:5000 --name app hellopy
+
+# ctrl-c to kill
+```
+![Container 'app' based on hellopy image](/images/lab-4-activity-2-success-2.png)
+
+3. Check that your app works
+
+Open up a browser and navigate to [localhost:5000](http://localhost:5000/). You should see something like this:
+
+![Familiar index.html page from Lab 3](/images/lab-4-activity-2-success-3.png)
+
+#### (Extra): Run with `docker-compose`
+
+The build/run/teardown process is greatly simplified if you use `docker-compose`:
+
+```sh
+# Build and run in background (omit -d for foreground)
+docker-compose up --build -d
+
+# Flask app should now be accessible at localhost:5000
+
+# Teardown
+docker-compose down
+```
+
+This is made possible by the `docker-compose.yml` file in the root directory of the project. The `docker-compose` utility should come installed in the standard distribution of Docker Desktop for Windows/Mac, but [the Docker documentation](https://docs.docker.com/compose/install/) can help you out if your system doesn't fall into that group.
 
 ### Deliverable 3
 
