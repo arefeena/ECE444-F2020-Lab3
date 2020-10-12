@@ -6,7 +6,8 @@ This repo is a clone of https://github.com/miguelgrinberg/flasky
 
 ## Labs 4 and 5
 
-Below are the new deliverables for Labs 4 and 5. The original deliverables for Lab 3 can be found at the end of this doc:
+Below are the new deliverables for Labs 4 and 5.  
+[The original deliverables for Lab 3 can be found at the end of this doc](#lab-3).
 
 ### Deliverable 1
 
@@ -74,7 +75,17 @@ This is made possible by the `docker-compose.yml` file in the root directory of 
 
 ### Deliverable 3
 
-todo
+Docker containers initially seem very similar to virtual machines, but there are some key differences between the two:
+
+| Topic | Containers | VMs |
+| --- | --- | --- |
+| Performance  | Lightweight, low overhead, high-performance | Heavyweight, large overhead, performance cost due to added layer of guest OS |
+| Isolation / Security | Process-level; all containers share the host OS's kernel | OS-level; each VM runs a "guest" OS on top of the host |
+| Portability | Somewhat limited; kernel of container's OS must match host's e.g. Windows containers can't run on Linux machines | High; so long as the underlying infrastructure supports the CPU instructions you should be good, since the VM comes with its own OS |
+
+The reason for these differences is due to differences in architecture between the two, as shown in this image from a [Docker.com blog post](https://www.docker.com/blog/containers-replacing-virtual-machines/):
+
+![Containers vs Virtual Machines](https://i1.wp.com/www.docker.com/blog/wp-content/uploads/Blog.-Are-containers-..VM-Image-1.png)
 
 ---
 
